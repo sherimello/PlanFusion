@@ -16,13 +16,13 @@ import 'logout.dart';
 
 // Firebase configuration for web
 const firebaseConfig = {
-  'apiKey': "AIzaSyDXvHMFCYpIPEG7DDpUnfDkggIFMbCmpVk",
-  'authDomain': "planfuion.firebaseapp.com",
-  'projectId': "planfuion",
-  'storageBucket': "planfuion.firebasestorage.app",
-  'messagingSenderId': "189857540202",
-  'appId': "1:189857540202:web:a9e014e9ec3ced9da8c213",
-  'measurementId': "G-89E9Z0FBP9"
+  'apiKey': "AIzaSyDu3rAKbwGwTjfpjdMUmdXr3VRbwvcu84I",
+  // 'authDomain': "planfuion.firebaseapp.com",
+  'projectId': "planfusion-76dcd",
+  'storageBucket': "planfusion-76dcd.firebasestorage.app",
+  // 'messagingSenderId': "189857540202",
+  'appId': "1:547070959814:web:4187e11ecc5e81b79eb7c7",
+  // 'measurementId': "G-89E9Z0FBP9"
 };
 
 void main() async {
@@ -35,14 +35,16 @@ void main() async {
   if (kIsWeb) {
     // Initialize Firebase for web
     await Firebase.initializeApp(
-      // options: FirebaseOptions(
-      //   apiKey: firebaseConfig['apiKey']!,
-      //   authDomain: firebaseConfig['authDomain']!,
-      //   projectId: firebaseConfig['projectId']!,
-      //   storageBucket: firebaseConfig['storageBucket']!,
-      //   messagingSenderId: firebaseConfig['messagingSenderId']!,
-      //   appId: firebaseConfig['appId']!,
-      // ),
+      options: FirebaseOptions(
+        apiKey: firebaseConfig['apiKey']!,
+        authDomain: '',
+        // authDomain: firebaseConfig['authDomain']!,
+        projectId: firebaseConfig['projectId']!,
+        storageBucket: firebaseConfig['storageBucket']!,
+        // messagingSenderId: firebaseConfig['messagingSenderId']!,
+        appId: firebaseConfig['appId']!,
+        messagingSenderId: '',
+      ),
     );
   } else {
     // Initialize Firebase for Android/iOS
