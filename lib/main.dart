@@ -7,6 +7,8 @@ import 'package:untitled5/admin_screen/admin_dashboard_screen.dart';
 import 'package:untitled5/bookings/booking_form_al_karim.dart';
 import 'package:untitled5/bookings/booking_form_grandeur.dart';
 import 'package:untitled5/client_screen/ai_budget_tracking.dart';
+import 'package:untitled5/client_screen/chat.dart';
+import 'package:untitled5/client_screen/client_screen.dart';
 import 'package:untitled5/client_screen/home.dart';
 import 'package:untitled5/client_screen/ai_budget_tracking.dart';
 import 'signup_screen.dart';
@@ -16,13 +18,14 @@ import 'logout.dart';
 
 // Firebase configuration for web
 const firebaseConfig = {
-  'apiKey': "AIzaSyDu3rAKbwGwTjfpjdMUmdXr3VRbwvcu84I",
-  // 'authDomain': "planfuion.firebaseapp.com",
+  'apiKey': "AIzaSyD62GgUCxIpgXxPars0nf9NtmK65EK2X0o",
+  'authDomain': "planfusion-76dcd.firebaseapp.com",
+  'databaseURL': "https://planfusion-76dcd-default-rtdb.firebaseio.com",
   'projectId': "planfusion-76dcd",
   'storageBucket': "planfusion-76dcd.firebasestorage.app",
-  // 'messagingSenderId': "189857540202",
-  'appId': "1:547070959814:web:4187e11ecc5e81b79eb7c7",
-  // 'measurementId': "G-89E9Z0FBP9"
+  'messagingSenderId': "547070959814",
+  'appId': "1:547070959814:web:b4df209985625e7a9eb7c7",
+  'measurementId': "G-D4C2727ND8"
 };
 
 void main() async {
@@ -37,13 +40,14 @@ void main() async {
     await Firebase.initializeApp(
       options: FirebaseOptions(
         apiKey: firebaseConfig['apiKey']!,
-        authDomain: '',
-        // authDomain: firebaseConfig['authDomain']!,
+        // authDomain: '',
+        authDomain: firebaseConfig['authDomain']!,
         projectId: firebaseConfig['projectId']!,
         storageBucket: firebaseConfig['storageBucket']!,
         // messagingSenderId: firebaseConfig['messagingSenderId']!,
         appId: firebaseConfig['appId']!,
         messagingSenderId: '',
+        databaseURL: "https://planfusion-76dcd-default-rtdb.firebaseio.com/"
       ),
     );
   } else {
@@ -64,6 +68,7 @@ class PlanFusionApp extends StatelessWidget {
       title: 'PlanFusion AI Driven Budget Wedding App',
       initialRoute: '/',
       routes: {
+        // '/': (context) => const ClientScreen(),
         '/': (context) => const SplashScreen(),
         '/signup': (context) => const SignUpScreen(),
         '/serviceProvider': (context) => const ServiceProviderMain(), // Navigation to Service Provider Section
